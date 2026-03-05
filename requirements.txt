@@ -1,0 +1,9 @@
+langgraph
+langchain-groq
+yfinance
+langchain-core
+python-dotenv
+streamlit
+newsapi-python
+langchain-tavily
+langchain
