@@ -7,13 +7,13 @@ youtube = build("youtube", "v3", developerKey=os.getenv("YOUTUBE_API_KEY"))
 
 @tool
 def search_youtube_videos(query, max_results=5):
-    """Tool for searching videos on YouTube"""
+    """Tool for searching videos on YouTube and return the video url"""
     request = youtube.search().list(
         part="snippet",
-        q=query,
+        q=query + " -shorts",
         type="video",
         maxResults=max_results,
-        order="title"
+        order="relevance"
     )
     response = request.execute()
 
@@ -28,4 +28,4 @@ def search_youtube_videos(query, max_results=5):
         }
         videos.append(video_data)
 
-    return videos
+    return videos[:5]
