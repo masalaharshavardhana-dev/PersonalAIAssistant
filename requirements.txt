@@ -8,3 +8,5 @@ newsapi-python
 langchain-tavily
 langchain
 google-api-python-client
+groq
+streamlit-mic-recorder
